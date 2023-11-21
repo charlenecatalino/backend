@@ -36,7 +36,7 @@ Route::put('/user/password/{id}', [UserController::class, 'password'])->name('us
 
 Route::get('/prompt', [PromptController::class, 'index']);
 Route::get('/prompt/{id}', [PromptController::class, 'show']);
-Route::post('/prompt', [PromptController::class, 'store'])->name('prompt.store');
+Route::post('/prompt', [PromptController::class, 'store']);
 Route::delete('/prompt/{id}', [PromptController::class, 'delete']);
-Route::put('/prompt/{id}', [PromptController::class, 'update'])->name('prompt.update');
+Route::put('/prompt/{id}', [PromptController::class, 'update']);
 

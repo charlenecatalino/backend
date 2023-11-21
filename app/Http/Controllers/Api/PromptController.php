@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Api;
 
 
 use App\Models\Prompt;
-use App\Models\Flight;
 use Illuminate\Http\Request;
-use App\Http\Requests\UserRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PromptRequest;
 
@@ -41,10 +39,7 @@ class PromptController extends Controller
     {
         return Prompt::findOrFail($id);
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
+    
     /**
      * Update the specified resource in storage
      */
