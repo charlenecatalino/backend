@@ -4,8 +4,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\Api\CarouselItemsController;
 use App\Http\Controllers\Api\PromptController;
+use App\Http\Controllers\Api\ProfileController;
+use App\Http\Controllers\Api\CarouselItemsController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -45,7 +47,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
     });
 
     //User Specific APIs
-    Route::put('/user/image/{id}',    'image')->name('user.image');
+    Route::get('/profile/show',    [ProfileController::class, 'show']);
+    Route::put('/profile/image',   [ProfileController::class, 'image'])->name('profile.image');
 });
 
 
