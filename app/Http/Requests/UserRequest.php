@@ -27,6 +27,13 @@ class UserRequest extends FormRequest
                 'password'  => 'required|min:8',
            ];
         }
+        else if(request()->routeIs('user.store')) {
+            return [ 
+                 'name'      => 'required|string|max:255',
+                 'email'     => 'required|string|email|max:255',
+                 'password'  => 'required|min:8',
+            ];
+         }
         else if(request()->routeIs('user.update') ) {
             return[
                 'name'      => 'required|string|max:255'
@@ -40,6 +47,11 @@ class UserRequest extends FormRequest
         else if(request()->routeIs('user.password')) {
             return[
                 'password'  => 'required|confirmed|min:8'
+            ];
+        }
+        else if(request()->routeIs('user.image')) {
+            return[
+                'image'  => 'required|image|mimes:jpg,bmp,png|max:2048'
             ];
         }
 

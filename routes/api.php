@@ -25,6 +25,7 @@ Route::post('/user',  [UserController::class, 'store'])->name('user.store');
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 
+    //Admin APIs
     Route::controller(CarouselItemsController::class)->group(function () {
         Route::get('/carousel',          'index');
         Route::get('/carousel/{id}',     'show');
@@ -40,7 +41,11 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::put('/user/{id}',          'update')->name('user.update');
         Route::put('/user/email/{id}',    'email')->name('user.email');
         Route::put('/user/password/{id}', 'password')->name('user.password');
+        Route::put('/user/image/{id}',    'image')->name('user.image');
     });
+
+    //User Specific APIs
+    Route::put('/user/image/{id}',    'image')->name('user.image');
 });
 
 
